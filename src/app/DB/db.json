@@ -1,0 +1,30 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "allo"
+    },
+    {
+      "id": 2,
+      "name": "Tarte",
+      "preparation": "Oui",
+      "ingredients": [
+        {
+          "ingredientNumber": 1,
+          "ingredientName": "Jambon"
+        }
+      ]
+    },
+    {
+      "name": "Tarte",
+      "preparation": "Oui",
+      "ingredients": [
+        {
+          "ingredientNumber": 1,
+          "ingredientName": "Jambon"
+        }
+      ],
+      "id": 3
+    }
+  ]
+}
