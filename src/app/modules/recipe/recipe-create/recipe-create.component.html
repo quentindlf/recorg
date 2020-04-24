@@ -1,0 +1,60 @@
+<h1>Ajouter une recette</h1>
+
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input
+      matInput
+      type="text"
+      placeholder="Recipe Name"
+      formControlName="name"
+      required
+    />
+  </mat-form-field>
+
+  <div
+    class="col-ingredients"
+    *ngFor="let ingredient of ingredientsForm.controls; let i = index"
+  >
+    <div class="row-ingredients" [formGroup]="ingredient">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="Ingredient Name"
+          formControlName="ingredientName"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="number"
+          placeholder="Quantity of ingredients"
+          formControlName="ingredientNumber"
+          required
+        />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <mat-form-field>
+    <textarea
+      matInput
+      placeholder="Preparation"
+      formControlName="preparation"
+      required
+    ></textarea>
+  </mat-form-field>
+
+  <button
+    type="button"
+    mat-raised-button
+    color="primary"
+    (click)="addIngredientLine()"
+  >
+    Add ingredient
+  </button>
+  <button type="submit" mat-raised-button color="primary">
+    Save
+  </button>
+</form>
