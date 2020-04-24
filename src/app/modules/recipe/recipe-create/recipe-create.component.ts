@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RecipeService } from 'src/app/services/recipe/recipe.service';
 
 @Component({
   selector: 'app-create',
@@ -12,7 +13,7 @@ export class RecipeCreateComponent implements OnInit {
   recipeForm: FormGroup;
   pageLoaded: boolean;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private recipeService: RecipeService) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -23,12 +24,12 @@ export class RecipeCreateComponent implements OnInit {
 
   initForm() {
     this.recipeForm = this.formBuilder.group({
-      name: [''],
-      preparation: [''],
+      name: ['Tarte'],
+      preparation: ['Oui'],
       ingredients: new FormArray([
         this.formBuilder.group({
-          ingredientNumber: [0],
-          ingredientName: ['']
+          ingredientNumber: [1],
+          ingredientName: ['Jambon']
         })
       ])
     });
@@ -49,7 +50,13 @@ export class RecipeCreateComponent implements OnInit {
       return;
     }
 
-    this.router.navigateByUrl('/recipe');
+    console.log(this.recipeForm.value);
+
+    this.recipeService.addRecipe(this.recipeForm.value).subscribe(rep => {
+      console.log(rep);
+    });
+
+    //this.router.navigateByUrl('/recipe');
     console.log(this.recipeForm);
   }
 

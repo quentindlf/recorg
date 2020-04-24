@@ -8,6 +8,7 @@ import { CoreModule } from './core/core.module';
 import { MaterialDesignModule } from './material-design/material-design.module';
 import { HomeModule } from './modules/home/home.module';
 import { RecipeModule } from './modules/recipe/recipe.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { RecipeModule } from './modules/recipe/recipe.module';
     HomeModule,
     RecipeModule,
     MaterialDesignModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
