@@ -1,0 +1,7 @@
+<div class="recipe-container" *ngIf="recipe">
+  <h1>{{ recipe.name }}</h1>
+  <p *ngFor="let ingredients of recipe.ingredients">
+    {{ ingredients.ingredientName }} ({{ ingredients.ingredientNumber }})
+  </p>
+  <p>{{ recipe.preparation }}</p>
+</div>

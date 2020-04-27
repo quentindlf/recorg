@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipe/recipe.service';
 import { RecipeModel } from 'src/app/models/recipe.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-list',
@@ -11,7 +12,7 @@ export class RecipeListComponent implements OnInit {
 
   recipes: RecipeModel[];
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private router: Router) { }
 
   ngOnInit(): void {
     this.fetchRecipes();
@@ -22,6 +23,10 @@ export class RecipeListComponent implements OnInit {
       console.log(rep);
       this.recipes = rep;
     });
+  }
+
+  navigateToDetails(id: number) {
+    this.router.navigateByUrl(`/recipe/details/${id}`);
   }
 
 }

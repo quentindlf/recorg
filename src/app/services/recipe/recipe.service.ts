@@ -16,4 +16,9 @@ export class RecipeService {
   getRecipes() {
     return this.http.get<RecipeModel[]>('http://localhost:3000/recipes');
   }
+
+  getRecipe(recipeId: string | number) {
+    return this.http.get<RecipeModel>(`http://localhost:3000/recipes/${recipeId}`);
+  }
+
 }

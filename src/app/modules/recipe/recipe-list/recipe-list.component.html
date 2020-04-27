@@ -1,8 +1,9 @@
 <mat-nav-list>
   <mat-list-item *ngFor="let recipe of recipes">
-    <span>
+    <span> </span>
+    <a mat-list-item (click)="navigateToDetails(recipe.id)">
       {{ recipe.name }}
-    </span>
+    </a>
     <mat-divider></mat-divider>
   </mat-list-item>
 </mat-nav-list>
