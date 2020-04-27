@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatInputModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatListModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -31,7 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatInputModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatListModule
   ]
 })
 export class MaterialDesignModule { }

@@ -1,10 +1,6 @@
 {
   "recipes": [
     {
-      "id": 1,
-      "name": "allo"
-    },
-    {
       "id": 2,
       "name": "Tarte",
       "preparation": "Oui",
@@ -25,6 +21,17 @@
         }
       ],
       "id": 3
+    },
+    {
+      "name": "Tarte",
+      "preparation": "Ouihghgg",
+      "ingredients": [
+        {
+          "ingredientNumber": 1,
+          "ingredientName": "Jambon"
+        }
+      ],
+      "id": 4
     }
   ]
 }

@@ -12,4 +12,8 @@ export class RecipeService {
   addRecipe(recipe: RecipeModel) {
     return this.http.post('http://localhost:3000/recipes', recipe, { headers: { header: 'Content-Type: application/json' } });
   }
+
+  getRecipes() {
+    return this.http.get<RecipeModel[]>('http://localhost:3000/recipes');
+  }
 }
